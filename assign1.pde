@@ -58,7 +58,7 @@ void draw() {
   //line
   strokeWeight(10);
   stroke(255,0,0);
-  line(lineX-lineDistance,robotY+37,lineX-40-lineDistance,robotY+37);
+  line(lineX-lineDistance,robotY+37,lineX-30-lineDistance,robotY+37);
   lineMove = lineMove+2;
   lineDistance = lineMove%160;
   
