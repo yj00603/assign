@@ -1,8 +1,8 @@
-  float w=640,h=480;
+    float w=640,h=480;
   float soldierX,soldierY;
   float speedX=2;
   float robotX,robotY;
-  float lineX;
+  float lineX,lineDistance,lineMove;
 
 
   
@@ -18,7 +18,7 @@ void setup() {
   robot = loadImage("img/robot.png");
   robotX = floor(random(3,8))*80;
   robotY = floor(random(3,6))*80;
-  lineX=robotX+25;
+  lineX = robotX+20;
   soil = loadImage("img/soil.png");
   soldier = loadImage("img/soldier.png");
   soldierY= floor(random(3,6))*80;
@@ -54,12 +54,13 @@ void draw() {
   
   //robot
   image(robot,robotX,robotY);
+  
+  //line
   strokeWeight(10);
   stroke(255,0,0);
-  lineX-=speedX;
-  lineX%=(robotX-185);
-  line(lineX,robotY+37,lineX-20,robotY+37);
-  
+  line(lineX-lineDistance,robotY+37,lineX-40-lineDistance,robotY+37);
+  lineMove = lineMove+2;
+  lineDistance = lineMove%160;
   
   
 }
