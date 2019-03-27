@@ -1,4 +1,4 @@
-   float w=640,h=480;
+ float w=640,h=480;
   float soldierX,soldierY;
   float speedX=2;
   float robotX,robotY;
@@ -52,7 +52,9 @@ void draw() {
   //soilier
   image(soldier,soldierX-80,soldierY);
   soldierX+= speedX;
-  soldierX %= 720;
+   if(soldierX>720) {
+      soldierX=-80;
+    }
   
   //robot
   image(robot,robotX,robotY);
